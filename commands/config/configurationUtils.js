@@ -127,12 +127,12 @@ function printConfiguration(){
 
     console.log(
         chalk.yellowBright('Current Configuration:\n'),
-        chalk.GreenBright('project root directory:\t'),chalk.bgGreenBright(` ${rootPath}\n`),
-        chalk.GreenBright('controller directory:\t'),chalk.bgGreenBright(` ${controllerPath}\n`),
-        chalk.GreenBright('repository interface directory:\t'),chalk.bgGreenBright(` ${repositoryInterfacePath}\n`),
-        chalk.GreenBright('repository implementation directory:\t'),chalk.bgGreenBright(` ${repositoryImplementationPath}\n`),
-        chalk.GreenBright('service interface directory:\t'),chalk.bgGreenBright(` ${serviceInterfacePath}\n`),
-        chalk.GreenBright('service implementation directory:\t'),chalk.bgGreenBright(` ${serviceImplementationPath}\n`),
+        chalk.greenBright('project root directory:\t'),chalk.white(` ${rootPath}\n`),
+        chalk.greenBright('controller directory:\t'),chalk.white(` ${controllerPath}\n`),
+        chalk.greenBright('repository interface directory:\t'),chalk.white(` ${repositoryInterfacePath}\n`),
+        chalk.greenBright('repository implementation directory:\t'),chalk.white(` ${repositoryImplementationPath}\n`),
+        chalk.greenBright('service interface directory:\t'),chalk.white(` ${serviceInterfacePath}\n`),
+        chalk.greenBright('service implementation directory:\t'),chalk.white(` ${serviceImplementationPath}\n`),
     );
 }
 
