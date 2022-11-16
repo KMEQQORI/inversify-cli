@@ -2,7 +2,7 @@
 
 const { program } = require('commander')
 
-const printConfiguration = require('./commands/config/printConfiguration')
+const initAndPrintConfiguration = require('./commands/config/printConfiguration')
 const resetConfiguration = require('./commands/config/resetConfiguration')
 
 const newRepository = require('./commands/repository/newRepository')
@@ -20,7 +20,7 @@ const printController = require("./commands/controller/printController")
 program
     .command('config-print')
     .description('handle files paths configurations')
-    .action(printConfiguration)
+    .action(initAndPrintConfiguration)
 program
     .command('config-reset')
     .description('handle files paths configurations')

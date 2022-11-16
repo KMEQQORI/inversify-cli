@@ -1,5 +1,5 @@
 const chalk = require('chalk')
-const printConfiguration = require("./printConfiguration")
+const { printConfiguration } = require("./configurationUtils")
 const scanf = require("scanf");
 const conf = new (require('conf'))()
 

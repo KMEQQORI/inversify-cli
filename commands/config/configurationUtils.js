@@ -2,9 +2,8 @@ const chalk = require("chalk");
 const scanf = require("scanf");
 const conf = new (require('conf'))()
 
-
 function getControllerPathConfiguration(){
-    let controllerPath = conf.get('inversify-controller-path')
+    let controllerPath = conf.get('inversify-controller-path');
 
     if (!controllerPath) {
         console.log(
@@ -23,8 +22,10 @@ function getControllerPathConfiguration(){
     return { controllerPath }
 }
 
+
+
 function getRootPathConfiguration(){
-    let rootPath = conf.get('inversify-root-path')
+    let rootPath = conf.get('inversify-root-path');
 
     if (!rootPath) {
         console.log(
@@ -116,4 +117,24 @@ function getServicePathConfiguration(){
 }
 
 
-module.exports = { getRepositoryPathConfiguration , getServicePathConfiguration , getRootPathConfiguration , getControllerPathConfiguration}
+function printConfiguration(){
+    let rootPath = conf.get('inversify-root-path')
+    let controllerPath = conf.get('inversify-controller-path');
+    let repositoryInterfacePath = conf.get('inversify-repository-interfaces-path')
+    let repositoryImplementationPath = conf.get('inversify-repository-implementation-path')
+    let serviceInterfacePath = conf.get('inversify-service-interfaces-path')
+    let serviceImplementationPath = conf.get('inversify-service-implementation-path')
+
+    console.log(
+        chalk.yellowBright('Current Configuration:\n'),
+        chalk.bgGreenBright('project root directory:\t'),chalk.bgGreenBright(` ${rootPath}\n`),
+        chalk.bgGreenBright('controller directory:\t'),chalk.bgGreenBright(` ${controllerPath}\n`),
+        chalk.bgGreenBright('repository interface directory:\t'),chalk.bgGreenBright(` ${repositoryInterfacePath}\n`),
+        chalk.bgGreenBright('repository implementation directory:\t'),chalk.bgGreenBright(` ${repositoryImplementationPath}\n`),
+        chalk.bgGreenBright('service interface directory:\t'),chalk.bgGreenBright(` ${serviceInterfacePath}\n`),
+        chalk.bgGreenBright('service implementation directory:\t'),chalk.bgGreenBright(` ${serviceImplementationPath}\n`),
+    );
+}
+
+
+module.exports = { getRepositoryPathConfiguration , getServicePathConfiguration , getRootPathConfiguration , getControllerPathConfiguration , printConfiguration}

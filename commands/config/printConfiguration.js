@@ -3,7 +3,7 @@ const { getRepositoryPathConfiguration , getServicePathConfiguration , getRootPa
     getControllerPathConfiguration
 } = require("./configurationUtils")
 
-function printConfiguration() {
+function initAndPrintConfiguration() {
     console.log(
         chalk.bold.yellowBright(`\n\n Current Paths configuration : `),
     )
@@ -13,4 +13,4 @@ function printConfiguration() {
     const { controllerPath } = getControllerPathConfiguration();
 }
 
-module.exports = printConfiguration;
+module.exports = initAndPrintConfiguration;
